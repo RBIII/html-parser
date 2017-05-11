@@ -1,0 +1,22 @@
+<div id="content">
+  <h1 id="welcome">Welcome!</h1>
+  <h3><%= flash[:alert] if flash[:alert] %></h3>
+
+  <p class="explaination-text">
+    This site's main function is to serve as an API for parsing out HTML content
+    from the input url. Parsed out or 'indexed' content includes any h1, h2, h3 tags,
+    and any links on the page.
+  </p>
+
+  <p class="explaination-text">
+    You can check out a list of all indexed pages via GET request to <%= root_url.chop + api_v1_pages_path %>
+  </p>
+
+  <p class="explaination-text">
+    or submit a new page via POST request to <%= root_url.chop + api_v1_pages_path %> with
+  </p>
+
+  <p class="explaination-text">
+    example: curl -d '{"url":"https://stackoverflow.com"}' -H "Content-Type: application/json" -X POST <%= root_url.chop + api_v1_pages_path %>
+  </p>
+</div>
